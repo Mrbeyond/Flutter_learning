@@ -28,21 +28,25 @@ class Buton extends StatelessWidget {
           InkWell(child: Text("Inkwell Button", style: TextStyle(fontSize: 25))),
           SizedBox(height: 20),
           OutlinedButton(onPressed: (){}, child: Text("Outlined Button", style: TextStyle(fontSize: 25),) ),
-          ButtonBar(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-            TextButton(onPressed: (){}, child: Text("Text Button", style: TextStyle(fontSize: 25),) ),
-            ElevatedButton(onPressed: (){}, child: Text("Elevated Button", style: TextStyle(fontSize: 25),) ),
-            IconButton(
-              icon: Icon(Icons.accessible),
-              iconSize: 30,
-              onPressed: (){},
+          Container(
+            child: new ButtonBar(
+              mainAxisSize: MainAxisSize.min,
+              alignment: MainAxisAlignment.spaceBetween,
+              layoutBehavior: ButtonBarLayoutBehavior.padded,
+              children: [
+              TextButton(onPressed: (){}, child: Text("Text Button", style: TextStyle(fontSize: 25),) ),
+              ElevatedButton(onPressed: (){}, child: Text("Elevated Button", style: TextStyle(fontSize: 25),) ),
+              IconButton(
+                icon: Icon(Icons.accessible),
+                iconSize: 30,
+                onPressed: (){},
 
-            ),
-            InkWell(child: Text("Inkwell Button", style: TextStyle(fontSize: 25))),
-            OutlinedButton(onPressed: (){}, child: Text("Outlined Button", style: TextStyle(fontSize: 25),) ),
+              ),
+              InkWell(child: Text("Inkwell Button", style: TextStyle(fontSize: 25))),
+              OutlinedButton(onPressed: (){}, child: Text("Outlined Button", style: TextStyle(fontSize: 25),) ),
 
-          ],)
+            ],),
+          )
 
         ],
       ),

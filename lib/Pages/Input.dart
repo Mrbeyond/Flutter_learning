@@ -33,6 +33,7 @@ class Input extends StatelessWidget {
             decoration: InputDecoration(
                 border: InputBorder.none, //OutlineInputBorder(),
                 icon: Icon(Icons.badge),
+                filled:true,
                 focusedBorder: OutlineInputBorder(),
                 labelText: "Last Name",
                 helperText: "Helper text for last name input",
@@ -46,7 +47,7 @@ class Input extends StatelessWidget {
             obscureText: true,
             controller: passkey,
             decoration: InputDecoration(
-                border: InputBorder.none, //OutlineInputBorder(),
+                // border: InputBorder.none, //OutlineInputBorder(),
                 labelText: "Passkey",
                 hintText: "Enter passkey here"
             ),

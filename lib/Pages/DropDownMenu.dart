@@ -15,7 +15,7 @@ class DropDownMenu extends StatelessWidget {
   DropDownMenu(){
     _dropdownMenuItems = makeDropDownLayout(menuLists);
     _currentMenu = menuLists[0];
-    print(_dropdownMenuItems);
+    // print(_dropdownMenuItems);
   }
 
   List<DropdownMenuItem<MenuList>> makeDropDownLayout(List<MenuList> lists ){

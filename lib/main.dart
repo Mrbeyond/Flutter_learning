@@ -2,14 +2,18 @@ import "package:flutter/material.dart";
 import 'package:flutter_app/Pages/BottomNav.dart';
 import 'package:flutter_app/Pages/Buton.dart';
 import 'package:flutter_app/Pages/Crypto.dart';
+import 'package:flutter_app/Pages/Dialogs.dart';
 import 'package:flutter_app/Pages/Drawer.dart';
 import 'package:flutter_app/Pages/DropDownMenu.dart';
 import 'package:flutter_app/Pages/FloatingButton.dart';
+import 'package:flutter_app/Pages/Formz.dart';
+import 'package:flutter_app/Pages/Images.dart';
 import 'package:flutter_app/Pages/Input.dart';
 import 'package:flutter_app/Pages/Kontainer.dart';
 import 'package:flutter_app/Pages/PersistenceBottom.dart';
 import 'package:flutter_app/Pages/PopUp.dart';
 import 'package:flutter_app/Pages/SpannedText.dart';
+import 'package:flutter_app/Pages/Stackers.dart';
 
 void main() {
   runApp(FlutterApp());
@@ -52,6 +56,10 @@ class _FlutterAppState extends State<FlutterApp> {
               SPannedText(),
               Input(),
               Buton(),
+              Stackers(),
+              Formz(),
+              Dialogs(),
+              Images(),
 
 
             ],
