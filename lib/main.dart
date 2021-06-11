@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:flutter_app/Pages/BottomNav.dart';
 import 'package:flutter_app/Pages/Buton.dart';
+import 'package:flutter_app/Pages/Cardz.dart';
 import 'package:flutter_app/Pages/Crypto.dart';
 import 'package:flutter_app/Pages/Dialogs.dart';
 import 'package:flutter_app/Pages/Drawer.dart';
@@ -31,40 +32,59 @@ class _FlutterAppState extends State<FlutterApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("First Flutter App"),
-          centerTitle: true,
-          elevation: 0,
-          actions: [
-            TextButton(onPressed: null, child: Icon(Icons.badge)),
-            PopUp(),
-          ],
-        ),
-        drawer: AppDrawer(),
-        endDrawer: AppDrawer(),
-        floatingActionButton: FloatingButton(),
-        bottomNavigationBar: BottomNav(),
-        persistentFooterButtons: [ PersistenceBottom() ],
-        body:Padding(
-          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 5),
-          child: ListView(
-            children: [
-              DropDownMenu(),
-              Crypto(),
-              Kontainer(),
-              SPannedText(),
-              Input(),
-              Buton(),
-              Stackers(),
-              Formz(),
-              Dialogs(),
-              Images(),
-
-
+      home: DefaultTabController(
+        length: 4,
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text("First Flutter App"),
+            centerTitle: true,
+            elevation: 0,
+            actions: [
+              TextButton(onPressed: null, child: Icon(Icons.badge)),
+              PopUp(),
             ],
+            bottom: TabBar(
+              tabs: [
+                Tab(text: "one"),
+                Tab(icon: Icon(Icons.add_call)),
+                Tab(text: "two"),
+                Tab(icon: Icon(Icons.add_call))
+              ],
+            )
           ),
-        )
+          drawer: AppDrawer(),
+          endDrawer: AppDrawer(),
+          floatingActionButton: FloatingButton(),
+          bottomNavigationBar: BottomNav(),
+          persistentFooterButtons: [ PersistenceBottom() ],
+          body: Padding(
+            padding: EdgeInsets.symmetric(vertical: 8, horizontal: 5),
+            child: ListView(
+              children: [
+                /** Supposed to occupy the body */
+                // TabBarView(children: [
+                //   Text("ONE"),
+                //   Text("ONE"),
+                //   Text("ONE"),
+                //   Text("ONE"),
+                // ]),
+                DropDownMenu(),
+                Crypto(),
+                Kontainer(),
+                SPannedText(),
+                Input(),
+                Buton(),
+                Stackers(),
+                Formz(),
+                Dialogs(),
+                Cardz(),
+                Images(),
+
+
+              ],
+            ),
+          )
+        ),
       ),
       theme: ThemeData.light(),
     );

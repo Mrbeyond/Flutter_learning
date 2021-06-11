@@ -6,6 +6,7 @@ class Images extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
+        margin: EdgeInsets.symmetric(vertical: 50, horizontal: 0),
       child: Column(
         children: [
           SizedBox(height: 30, child: Text("Local Images")),

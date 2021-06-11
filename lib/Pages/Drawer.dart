@@ -21,7 +21,7 @@ class AppDrawer extends StatelessWidget {
             Divider(
               height: 0.2,
             ),
-            ...new List(50).map((data){
+            ...List.generate(50, (index)=>index).map((data){
               return ListTile(
                 subtitle: Text("Ths subtitle"),
                 trailing: Text("The trailing"),
