@@ -14,8 +14,8 @@ class Images extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             mainAxisSize: MainAxisSize.max,
             children: [
-              Image.asset('assets/locals/chart.png'),
-              Image.asset('assets/locals/Presentation.png'),
+              Expanded(child: Image.asset('assets/locals/chart.png'),),
+              Expanded(child: Image.asset('assets/locals/Presentation.png'),),
             ],
           ),
           SizedBox(height: 30, child: Text("Local Images changed dir")),
@@ -23,8 +23,8 @@ class Images extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             mainAxisSize: MainAxisSize.max,
             children: [
-              Image.asset('assets/locals/Presentation.png'),
-              Image.asset('assets/locals/chart.png'),
+              Expanded(child: Image.asset('assets/locals/Presentation.png')),
+              Expanded(child: Image.asset('assets/locals/chart.png')),
             ],
           ),
           SizedBox(height: 30, child: Text("Remote Images")),
@@ -33,13 +33,17 @@ class Images extends StatelessWidget{
             mainAxisSize: MainAxisSize.max,
             children: [
 
-              Image.network(
+              Expanded(
+                child: Image.network(
                   'https://img.favpng.com/19/23/20/computer-programming-software-developer-software-engineering-application-software-software-development-png-favpng-VBux2udSxw30eQMvN2tDdnsdv_t.jpg',
-                height: 200,
+                  height: 200,
+                ),
               ),
-              Image.network(
+              Expanded(
+                child:  Image.network(
                   'https://png.pngtree.com/png-clipart/20190925/original/pngtree-mobile-phone-receives-short-message-png-image_4999527.jpg',
-                height: 200,
+                  height: 200,
+                ),
               ),
             ],
           ),
@@ -49,25 +53,29 @@ class Images extends StatelessWidget{
             mainAxisSize: MainAxisSize.max,
             children: [
 
-              FadeInImage.assetNetwork(
-                placeholder: "assets/locals/chart.png",
-                image: 'https://img.favpng.com/19/23/20/computer-programming-software-developer-software-engineering-application-software-software-development-png-favpng-VBux2udSxw30eQMvN2tDdnsdv_t.jpg',
-                height: 200,
+              Expanded(child:
+                FadeInImage.assetNetwork(
+                  placeholder: "assets/locals/chart.png",
+                  image: 'https://img.favpng.com/19/23/20/computer-programming-software-developer-software-engineering-application-software-software-development-png-favpng-VBux2udSxw30eQMvN2tDdnsdv_t.jpg',
+                  height: 200,
+                ),
               ),
-              ],
+            ],
           ),
           SizedBox(height: 60, child: Text("Placeholder using kTransparentImage lib, FadeInImage memoryNetwork")),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             mainAxisSize: MainAxisSize.max,
             children: [
-              FadeInImage.memoryNetwork(
-                placeholder: kTransparentImage,
-                image: 'https://img.favpng.com/19/23/20/computer-programming-software-developer-software-engineering-application-software-software-development-png-favpng-VBux2udSxw30eQMvN2tDdnsdv_t.jpg',
-                height: 200,
+              Expanded(
+                child: FadeInImage.memoryNetwork(
+                  placeholder: kTransparentImage,
+                  image: 'https://img.favpng.com/19/23/20/computer-programming-software-developer-software-engineering-application-software-software-development-png-favpng-VBux2udSxw30eQMvN2tDdnsdv_t.jpg',
+                  height: 200,
+                ),
               ),
-        ],
-      ),
+            ],
+          ),
         ],
       ),
     );

@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import 'package:flutter_app/Pages/BottomNav.dart';
 import 'package:flutter_app/Pages/Buton.dart';
 import 'package:flutter_app/Pages/Cardz.dart';
+import 'package:flutter_app/Pages/CheckBoxes.dart';
 import 'package:flutter_app/Pages/Crypto.dart';
 import 'package:flutter_app/Pages/Dialogs.dart';
 import 'package:flutter_app/Pages/Drawer.dart';
@@ -11,8 +12,12 @@ import 'package:flutter_app/Pages/Formz.dart';
 import 'package:flutter_app/Pages/Images.dart';
 import 'package:flutter_app/Pages/Input.dart';
 import 'package:flutter_app/Pages/Kontainer.dart';
+import 'package:flutter_app/Pages/Listz.dart';
 import 'package:flutter_app/Pages/PersistenceBottom.dart';
 import 'package:flutter_app/Pages/PopUp.dart';
+import 'package:flutter_app/Pages/Progression.dart';
+import 'package:flutter_app/Pages/Radios.dart';
+import 'package:flutter_app/Pages/Snackbarz.dart';
 import 'package:flutter_app/Pages/SpannedText.dart';
 import 'package:flutter_app/Pages/Stackers.dart';
 
@@ -79,7 +84,11 @@ class _FlutterAppState extends State<FlutterApp> {
                 Dialogs(),
                 Cardz(),
                 Images(),
-
+                Snackbarz(),
+                Listz(),
+                CheckBoxes(),
+                Radios(),
+                Progression(),
 
               ],
             ),

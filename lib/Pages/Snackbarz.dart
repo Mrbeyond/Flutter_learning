@@ -11,30 +11,28 @@ class _SnackbarzState extends State<Snackbarz> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 20),
-      child: ListView(
-        children: [
-            ...lists.map((data){
-              return ListTile(
-                title: Text("$data"),
-                trailing: Container(
-                  width: 60,
-                  child: TextButton(
-                    child: Icon(
-                      Icons.delete,
-                      color: Colors.grey,
-                    ),
-                    onPressed: (){
-                      displaySnackBar(context, data);
-                    },
-                  ),
+    return ListView.builder(
+      physics: NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
+      itemCount: lists.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(lists[index].toString()),
+            trailing: Container(
+              width: 60,
+              child: TextButton(
+                child: Icon(
+                  Icons.delete,
+                  color: Colors.grey,
                 ),
-              );
-            })
-        ],
-      ),
-    );
+                onPressed: () {
+                  displaySnackBar(context, index);
+                },
+              ),
+            ),
+          );
+        }
+      );
   }
 
   void displaySnackBar( BuildContext context, int index){
@@ -45,7 +43,7 @@ class _SnackbarzState extends State<Snackbarz> {
     });
 
     SnackBar snackBar = SnackBar(
-        content: Text("Just deleted $deletedNumber"),
+      content: Text("Just deleted $deletedNumber"),
       action: SnackBarAction(
         label: "UNDO",
         onPressed: (){
