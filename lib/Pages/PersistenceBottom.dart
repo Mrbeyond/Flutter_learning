@@ -6,10 +6,10 @@ class PersistenceBottom extends StatelessWidget {
     return Row(
       children: [
         ElevatedButton(onPressed: (){
-          print("Bottom buttons");
+          print("Persistent Bottom buttons");
         }, child: Icon(Icons.more_time)),
         ElevatedButton(onPressed: (){
-          print("Bottom buttons 2");
+          print("Persistent Bottom buttons 2");
         }, child: Icon(Icons.more_time)),
       ],
     );

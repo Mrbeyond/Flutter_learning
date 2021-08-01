@@ -18,10 +18,10 @@ class PopUp extends StatelessWidget {
           );
       }).toList();
     },
-      onSelected: (Iconizer iconizer){
-        print("${iconizer.title} icon is ${iconizer.icon}");
-      },
-      // child: Icon(Icons.badge),
+    onSelected: (Iconizer iconizer){
+      print("${iconizer.title} icon is ${iconizer.icon}");
+    },
+    // child: Icon(Icons.badge),
     );
   }
 }

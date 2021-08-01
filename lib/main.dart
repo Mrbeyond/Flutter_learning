@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import 'package:flutter_app/Pages/BottomNav.dart';
 import 'package:flutter_app/Pages/Buton.dart';
 import 'package:flutter_app/Pages/Cardz.dart';
+import 'package:flutter_app/Pages/Chartses.dart';
 import 'package:flutter_app/Pages/CheckBoxes.dart';
 import 'package:flutter_app/Pages/Crypto.dart';
 import 'package:flutter_app/Pages/Dialogs.dart';
@@ -9,6 +10,7 @@ import 'package:flutter_app/Pages/Drawer.dart';
 import 'package:flutter_app/Pages/DropDownMenu.dart';
 import 'package:flutter_app/Pages/FloatingButton.dart';
 import 'package:flutter_app/Pages/Formz.dart';
+import 'package:flutter_app/Pages/GotoNewPage.dart';
 import 'package:flutter_app/Pages/Images.dart';
 import 'package:flutter_app/Pages/Input.dart';
 import 'package:flutter_app/Pages/Kontainer.dart';
@@ -17,9 +19,16 @@ import 'package:flutter_app/Pages/PersistenceBottom.dart';
 import 'package:flutter_app/Pages/PopUp.dart';
 import 'package:flutter_app/Pages/Progression.dart';
 import 'package:flutter_app/Pages/Radios.dart';
+import 'package:flutter_app/Pages/Slidders.dart';
 import 'package:flutter_app/Pages/Snackbarz.dart';
 import 'package:flutter_app/Pages/SpannedText.dart';
 import 'package:flutter_app/Pages/Stackers.dart';
+import 'package:flutter_app/Pages/Switches.dart';
+import 'package:flutter_app/Pages/TheAnimation.dart';
+import 'package:flutter_app/Pages/TheCalendar.dart';
+import 'package:flutter_app/Pages/TheTables.dart';
+import 'package:flutter_app/Pages/ThemeTest.dart';
+import 'package:flutter_app/Pages/ToolTipper.dart';
 
 void main() {
   runApp(FlutterApp());
@@ -32,7 +41,7 @@ class FlutterApp extends StatefulWidget {
 }
 
 class _FlutterAppState extends State<FlutterApp> {
-
+ bool themer = false;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +54,14 @@ class _FlutterAppState extends State<FlutterApp> {
             centerTitle: true,
             elevation: 0,
             actions: [
-              TextButton(onPressed: null, child: Icon(Icons.badge)),
+              TextButton(
+                onPressed: (){
+                  setState(() {
+                    themer = !themer;
+                  });
+                },
+                child: Icon(Icons.badge, color: Colors.white,)
+              ),
               PopUp(),
             ],
             bottom: TabBar(
@@ -64,7 +80,9 @@ class _FlutterAppState extends State<FlutterApp> {
           persistentFooterButtons: [ PersistenceBottom() ],
           body: Padding(
             padding: EdgeInsets.symmetric(vertical: 8, horizontal: 5),
+            // child: Slidders(),
             child: ListView(
+              physics: ClampingScrollPhysics(),
               children: [
                 /** Supposed to occupy the body */
                 // TabBarView(children: [
@@ -73,6 +91,7 @@ class _FlutterAppState extends State<FlutterApp> {
                 //   Text("ONE"),
                 //   Text("ONE"),
                 // ]),
+                GotoNewPage(),
                 DropDownMenu(),
                 Crypto(),
                 Kontainer(),
@@ -89,13 +108,23 @@ class _FlutterAppState extends State<FlutterApp> {
                 CheckBoxes(),
                 Radios(),
                 Progression(),
-
+                ToolTipper(),
+                Slidders(),
+                Switches(),
+                Chartses(),
+                ThemeTest(),
+                TheTables(),
+                TheCalendar(),
+                AnimationSamples(),
+                // TheAnimation(),
               ],
+
             ),
           )
         ),
       ),
-      theme: ThemeData.light(),
+      theme: !themer? ThemeData.light() : ThemeData.dark()
+
     );
   }
 }

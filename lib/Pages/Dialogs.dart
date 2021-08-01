@@ -37,23 +37,24 @@ class Basics extends StatelessWidget {
         children: [
           ElevatedButton(
               onPressed: (){
-                showDialog(context: context,
-                    builder: (BuildContext context){
-                      return AlertDialog(
-                        title: Text("The basic alert Dialog"),
-                        content: Padding(
-                          padding: EdgeInsets.only(top:20),
-                          child: Text("This is the basic alert dialog"),
-                        ),
-                        actions: [
-                          TextButton(
-                            onPressed: (){
-                            Navigator.of(context).pop();
-                            },
-                            child: Text("OK"))
-                        ],
-                      );
-                    });
+                showDialog(
+                context: context,
+                builder: (BuildContext context){
+                  return AlertDialog(
+                    title: Text("The basic alert Dialog"),
+                    content: Padding(
+                      padding: EdgeInsets.only(top:20),
+                      child: Text("This is the basic alert dialog"),
+                    ),
+                    actions: [
+                      TextButton(
+                        onPressed: (){
+                        Navigator.of(context).pop();
+                        },
+                        child: Text("OK"))
+                    ],
+                  );
+                });
               },
               child: Text("Show basic"))
         ],
