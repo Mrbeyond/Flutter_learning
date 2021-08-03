@@ -15,6 +15,8 @@ import 'package:flutter_app/Pages/Images.dart';
 import 'package:flutter_app/Pages/Input.dart';
 import 'package:flutter_app/Pages/Kontainer.dart';
 import 'package:flutter_app/Pages/Listz.dart';
+import 'package:flutter_app/Pages/NameRouteThree.dart';
+import 'package:flutter_app/Pages/NamedRouteTwo.dart';
 import 'package:flutter_app/Pages/PersistenceBottom.dart';
 import 'package:flutter_app/Pages/PopUp.dart';
 import 'package:flutter_app/Pages/Progression.dart';
@@ -29,11 +31,31 @@ import 'package:flutter_app/Pages/TheCalendar.dart';
 import 'package:flutter_app/Pages/TheTables.dart';
 import 'package:flutter_app/Pages/ThemeTest.dart';
 import 'package:flutter_app/Pages/ToolTipper.dart';
+import 'package:flutter_app/Pages/Utility.dart';
 
 void main() {
-  runApp(FlutterApp());
+  runApp(EntryContainer());
   print("Hello world!!");
 }
+
+class EntryContainer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+       theme: ThemeData(
+         primarySwatch: Colors.deepOrange
+       ),
+      initialRoute: "/",
+      routes: {
+         "/": (context)=> FlutterApp(),
+        '/second': (context)=> NamedRouteTwo(),
+        '/third': (context)=>  NamedRouteThree(),
+      },
+
+    );
+  }
+}
+
 
 class FlutterApp extends StatefulWidget {
   @override
@@ -42,6 +64,12 @@ class FlutterApp extends StatefulWidget {
 
 class _FlutterAppState extends State<FlutterApp> {
  bool themer = false;
+
+ @override
+  void initState() {
+    super.initState();
+    DartHttp().getJson();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +119,13 @@ class _FlutterAppState extends State<FlutterApp> {
                 //   Text("ONE"),
                 //   Text("ONE"),
                 // ]),
-                GotoNewPage(),
+                ElevatedButton(
+                  child: Text("Goto New Page using NamedRoute", style: TextStyle(fontSize: 18),),
+                  onPressed: (){
+                    Navigator.of(context).pushNamed('/second');
+                  },
+                ),
+                GotoNewPage(context),
                 DropDownMenu(),
                 Crypto(),
                 Kontainer(),
